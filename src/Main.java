@@ -272,6 +272,19 @@ public class Main {
 
 }
 
+//Create an interactive console program, with the menu of options as shown below:
+//Available actions:
+//0 - to shutdown;
+//1 - to add item(s) to list (comma-delimited list).
+//2 - to remove any item (comma-delimited list).
+//
+//Enter a number for which action you want to do:
+//
+//The list should be a Grocery list and should be ArrayList.
+//You should use the methods in the ArrayList to add item, remove items, check if the item is already in the list, and print a sorted list.
+//You should print the list sorted alphabetically, after each operation.
+//You should not allow duplicate item in the list.
+
 // Record created to use in the example of ArrayList<>.
 record GroceryItems(String name, String type, int count){
     public GroceryItems(String name){
@@ -341,7 +354,7 @@ public static void chooseMenu(){
             }
         }
         availableItems.removeAll(groceryItems);
-//       sorting the GroceryItems by name
+//       Sorting the GroceryItems by name.
         availableItems.sort(Comparator.comparing(GroceryItems::name));
         System.out.println("After removing item(s)"+availableItems);
         return availableItems;
