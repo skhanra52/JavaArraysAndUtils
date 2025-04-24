@@ -69,75 +69,150 @@ public class Main {
         // It implements the List interface, along with a few others like
         // RandomAccess, Cloneable, and Serializable.
 
-        ArrayList <GroceryItems> groceryItems = new ArrayList<>();
-        // Simply adding the elements to the end of the groceryItems List.
-        groceryItems.add(new GroceryItems("Milk"));
-        groceryItems.add(new GroceryItems("Butter"));
-        groceryItems.add(new GroceryItems("Apple", "Fruits", 2));
+//        ArrayList <GroceryItems> groceryItems = new ArrayList<>();
+//        // Simply adding the elements to the end of the groceryItems List.
+//        groceryItems.add(new GroceryItems("Milk"));
+//        groceryItems.add(new GroceryItems("Butter"));
+//        groceryItems.add(new GroceryItems("Apple", "Fruits", 2));
+//
+//        // If we want to add items at the beginning of the groceryItems,
+//        // We can override the add with index value and item.
+//        // Zero is the index value where I should add the item
+//        groceryItems.add(0, new GroceryItems("Oranges", "Fruits", 6));
+//        groceryItems.add(3, new GroceryItems("Banana", "Fruits", 9));
+//
+//        // To replace an entry we can use set method which will take the index value which should be replaced
+//        // and the item value which will be newly placed.
+//        // Butter will be replaced by Curd.
+//        groceryItems.set(2, new GroceryItems("Curd"));
+//
+//        // To remove the item from the groceryItems we can use remove method which accept the index value to remove.
+//        // Item Curd will be removed from the new ArrayList.
+//        groceryItems.remove(2);
+//
+//        // Traversing the ArrayList created with GroceryItems object.
+//        for(GroceryItems item: groceryItems){
+//            System.out.println("Here is item: "+item);
+//        }
+//        // Display the entire groceryItems once.
+//        System.out.println(groceryItems);
+//
+//        // Example of adding one list to another.
+//        String[] items = {"Apple","Orange","Banana"};
+//        List<String> list = List.of(items);
+//        ArrayList<String> fruits = new ArrayList<>(list);
+//        System.out.println(fruits);
+//        String[] moreItems = {"Grapes", "Pineapple","Jack fruit"};
+//        List<String> moreItemList = List.of(moreItems);
+//        // We are adding two list here (adding moreItemList to fruits).
+//        fruits.addAll(moreItemList);
+//        System.out.println("Final fruits list: " + fruits);
+//
+//        // Example of retrieving the data from the list. For which we use get() method.
+//        String itemAtThird = fruits.get(3);
+//        System.out.println("Here is the item at third position: "+itemAtThird);
+//        int itemFound = findItemInList(fruits, "banana");
+//        System.out.println("Item found at the position: "+itemFound);
+//
+//        // Remove all the items from the List which are found in the original List.
+//        fruits.removeAll(List.of("Grapes","Jack fruit"));
+//        System.out.println("After remove All: "+fruits);
+//
+//        // retainAll() returns the only those item you would like to keep in the list
+//        fruits.retainAll(List.of("Apple", "Orange", "Banana", "Grapes"));
+//        System.out.println("After retention:  "+fruits);
+//
+//        // Emptying the List and checking if the List is empty.
+//        fruits.clear();
+//        System.out.println("After clearing the List: "+fruits);
+//        System.out.println("Check if the list is empty " + fruits.isEmpty());
+//
+//        // Adding all the values back to List.
+//        fruits.addAll(Arrays.asList("Apple","Orange","Banana","Grapes","Pineapple","Jack fruit"));
+//        System.out.println("After adding items in fruits list: "+fruits);
+//
+//        // Sorting the List.
+//        fruits.sort(Comparator.naturalOrder());
+//        System.out.println("After sorting the List in alphabetical order: "+fruits);
+//        // Sorting the List in reverse order.
+//        fruits.sort(Comparator.reverseOrder());
+//        System.out.println("After sorting in reverse Order: "+fruits);
+//        GroceryItems.chooseMenu();
+        //---------------end of ArrayList-------------------------------------------
+        //--------------Start if LinkedList----------------------------------------
+        // ArrayList is implemented on top of the array,
+        // However, LinkedList is a doubly linked list. Both implement all of List's methods,
+        // but the LinkedList also implements the queue(FIFO) and stack(LIFO) methods as well.
 
-        // If we want to add items at the beginning of the groceryItems,
-        // We can override the add with index value and item.
-        // Zero is the index value where I should add the item
-        groceryItems.add(0, new GroceryItems("Oranges", "Fruits", 6));
-        groceryItems.add(3, new GroceryItems("Banana", "Fruits", 9));
+        // Adding & Removing Elements to and from the LinkedList-------------------
+        LinkedList<String> placesToVisit = new LinkedList<>();
 
-        // To replace an entry we can use set method which will take the index value which should be replaced
-        // and the item value which will be newly placed.
-        // Butter will be replaced by Curd.
-        groceryItems.set(2, new GroceryItems("Curd"));
+        // Adding the element to the LinkedList using List's method.
+        placesToVisit.add("Ahmedabad");
+        placesToVisit.add("Delhi");
+        placesToVisit.add("Kolkata");
+        placesToVisit.add("Chennai");
+        placesToVisit.add(3,"Mumbai");
+        System.out.println("Places to visit list: "+placesToVisit);
 
-        // To remove the item from the groceryItems we can use remove method which accept the index value to remove.
-        // Item Curd will be removed from the new ArrayList.
-        groceryItems.remove(2);
+        // Adding the elements to the LinkedList using LinkedList methods.
+        placesToVisit.addFirst("Bengaluru");
+        System.out.println("After using addFirst() the list is: "+placesToVisit);
+        String removeFirst = placesToVisit.removeFirst();
+        System.out.println("Element removed from the list: "+removeFirst);
+        System.out.println("After using removeFirst() the list is: "+placesToVisit);
 
-        // Traversing the ArrayList created with GroceryItems object.
-        for(GroceryItems item: groceryItems){
-            System.out.println("Here is item: "+item);
-        }
-        // Display the entire groceryItems once.
-        System.out.println(groceryItems);
 
-        // Example of adding one list to another.
-        String[] items = {"Apple","Orange","Banana"};
-        List<String> list = List.of(items);
-        ArrayList<String> fruits = new ArrayList<>(list);
-        System.out.println(fruits);
-        String[] moreItems = {"Grapes", "Pineapple","Jack fruit"};
-        List<String> moreItemList = List.of(moreItems);
-        // We are adding two list here (adding moreItemList to fruits).
-        fruits.addAll(moreItemList);
-        System.out.println("Final fruits list: " + fruits);
+        placesToVisit.addLast("Hyderabad");
+        System.out.println("After using addLast() the list is: "+placesToVisit);
 
-        // Example of retrieving the data from the list. For which we use get() method.
-        String itemAtThird = fruits.get(3);
-        System.out.println("Here is the item at third position: "+itemAtThird);
-        int itemFound = findItemInList(fruits, "banana");
-        System.out.println("Item found at the position: "+itemFound);
+        String itemRemoved = placesToVisit.removeLast();
+        System.out.println("Element removed from the list: "+itemRemoved);
+        System.out.println("After using removeLast() the list is: "+placesToVisit);
 
-        // Remove all the items from the List which are found in the original List.
-        fruits.removeAll(List.of("Grapes","Jack fruit"));
-        System.out.println("After remove All: "+fruits);
+        // dequeue add and remove methods
+        // offer adds the item to the end of the queue/List,
+        // both offer() and offerLast() adds element to the queue.
+//        placesToVisit.offer("Agartala");
+        placesToVisit.offerLast("Agartala");
+        System.out.println("After adding element using offer() "+placesToVisit);
 
-        // retainAll() returns the only those item you would like to keep in the list
-        fruits.retainAll(List.of("Apple", "Orange", "Banana", "Grapes"));
-        System.out.println("After retention:  "+fruits);
+        placesToVisit.offerFirst("Ranchi");
+        System.out.println("Added element to the list/queue using offerFirst(): "+placesToVisit);
 
-        // Emptying the List and checking if the List is empty.
-        fruits.clear();
-        System.out.println("After clearing the List: "+fruits);
-        System.out.println("Check if the list is empty " + fruits.isEmpty());
+        // remove() the first item from the list.
+//        String removeFirstFromList = placesToVisit.remove();
+        String removeFirstFromList = placesToVisit.removeFirst();
+        System.out.println("Removed item using empty params remove(): "+removeFirstFromList);
+        System.out.println("remove() method used without params: "+placesToVisit);
 
-        // Adding all the values back to List.
-        fruits.addAll(Arrays.asList("Apple","Orange","Banana","Grapes","Pineapple","Jack fruit"));
-        System.out.println("After adding items in fruits list: "+fruits);
+        String removeLastFromList = placesToVisit.removeLast();
+        System.out.println("Removed item using removeLast(): "+removeLastFromList);
+        System.out.println("removeLast() method used: "+placesToVisit);
+        // poll() remove the item from the start of the queue.
+        removeFirst = placesToVisit.poll();
+        System.out.println("Element removed from the start of the queue: "+removeFirst);
+        System.out.println("After using poll() the list of places: "+placesToVisit);
 
-        // Sorting the List.
-        fruits.sort(Comparator.naturalOrder());
-        System.out.println("After sorting the List in alphabetical order: "+fruits);
-        // Sorting the List in reverse order.
-        fruits.sort(Comparator.reverseOrder());
-        System.out.println("After sorting in reverse Order: "+fruits);
-        GroceryItems.chooseMenu();
+        String removeLast = placesToVisit.pollLast();
+        System.out.println("Element removed from the end of the queue: "+removeLast);
+        System.out.println("After using pollLast() the list of places: "+placesToVisit);
+
+        // Stack add and remove methods
+        // push() method adds the element to the top of the stack.
+        placesToVisit.push("Durgapur");
+        System.out.println("Added to list using stack add method push: "+placesToVisit);
+
+        // Remove the item from the top
+        String stackRemoveElement = placesToVisit.pop();
+        System.out.println("Item removed using pop(): "+stackRemoveElement);
+        System.out.println("Removed item from the stack using pop(): "+placesToVisit);
+
+
+
+
+
+
     }
 
     public static int findItemInList(ArrayList<String> fruits, String itemToFind){
@@ -331,6 +406,7 @@ public static void chooseMenu(){
                 noDuplicate.add(grocery);
             }
         }
+        // Added this because inside for loop it creates ConcurrentModificationException exception.
         for(String grocery : noDuplicate){
             groceryItems.add( new GroceryItems(grocery));
         }
