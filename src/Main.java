@@ -182,21 +182,21 @@ public class Main {
 
         // remove() the first item from the list.
 //        String removeFirstFromList = placesToVisit.remove();
-        String removeFirstFromList = placesToVisit.removeFirst();
-        System.out.println("Removed item using empty params remove(): "+removeFirstFromList);
-        System.out.println("remove() method used without params: "+placesToVisit);
-
-        String removeLastFromList = placesToVisit.removeLast();
-        System.out.println("Removed item using removeLast(): "+removeLastFromList);
-        System.out.println("removeLast() method used: "+placesToVisit);
+//        String removeFirstFromList = placesToVisit.removeFirst();
+//        System.out.println("Removed item using empty params remove(): "+removeFirstFromList);
+//        System.out.println("remove() method used without params: "+placesToVisit);
+//
+//        String removeLastFromList = placesToVisit.removeLast();
+//        System.out.println("Removed item using removeLast(): "+removeLastFromList);
+//        System.out.println("removeLast() method used: "+placesToVisit);
         // poll() remove the item from the start of the queue.
-        removeFirst = placesToVisit.poll();
-        System.out.println("Element removed from the start of the queue: "+removeFirst);
-        System.out.println("After using poll() the list of places: "+placesToVisit);
+//        removeFirst = placesToVisit.poll();
+//        System.out.println("Element removed from the start of the queue: "+removeFirst);
+//        System.out.println("After using poll() the list of places: "+placesToVisit);
 
-        String removeLast = placesToVisit.pollLast();
-        System.out.println("Element removed from the end of the queue: "+removeLast);
-        System.out.println("After using pollLast() the list of places: "+placesToVisit);
+//        String removeLast = placesToVisit.pollLast();
+//        System.out.println("Element removed from the end of the queue: "+removeLast);
+//        System.out.println("After using pollLast() the list of places: "+placesToVisit);
 
         // Stack add and remove methods
         // push() method adds the element to the top of the stack.
@@ -204,14 +204,56 @@ public class Main {
         System.out.println("Added to list using stack add method push: "+placesToVisit);
 
         // Remove the item from the top
-        String stackRemoveElement = placesToVisit.pop();
-        System.out.println("Item removed using pop(): "+stackRemoveElement);
-        System.out.println("Removed item from the stack using pop(): "+placesToVisit);
+//        String stackRemoveElement = placesToVisit.pop();
+//        System.out.println("Item removed using pop(): "+stackRemoveElement);
+//        System.out.println("Removed item from the stack using pop(): "+placesToVisit);
 
+        // Retrieving the element from the ArrayList.
+        System.out.println("Listing the place To visit: "+placesToVisit);
 
+        System.out.println("Get the 5th item of the list using List method: "+placesToVisit.get(1));
+        System.out.println("getFirst() method return first element: "+placesToVisit.getFirst());
+        System.out.println("getLast() method returns last element: "+placesToVisit.getLast());
+        System.out.println("Get the index of element from list: "+placesToVisit.indexOf("Kolkata"));
+        System.out.println("Get the last index of the element from list: "+placesToVisit.lastIndexOf("Delhi"));
 
+        // dequeue Retrieval methods
+        String retrieveFirstDequeue = placesToVisit.element();
+        System.out.println("dequeue retrieval element() returns the first element: "+retrieveFirstDequeue);
 
+        // Stack Retrieval
+        String retrieveFirstStack = placesToVisit.peek();
+        String retrieveLastStack = placesToVisit.pollLast();
+        System.out.println("Stack retrieval: first element - "+retrieveFirstStack+"  last element - "+retrieveLastStack);
 
+        // traverse a LinkedList -----------------------------------------------------
+
+        System.out.println(placesToVisit);
+//        String previousCity = placesToVisit.getFirst();
+//        System.out.println("Starting from: "+previousCity);
+        for(int i=1 ; i<placesToVisit.size(); i++){
+            System.out.println("From: "+placesToVisit.get(i-1) + " to "+placesToVisit.get(i));
+        }
+        System.out.println("Ending with city: "+placesToVisit.getLast());
+
+        // Traverse through ListIterator, it allows us to move forward or backward.
+        // In the only iterator() method we can to traverse towards backward. However, in the iterator() method
+        // we can modify the list concurrently.
+        // In the ListIterator method we have the support of add() / Set() / remove() method as well.
+        String previousCity = placesToVisit.getFirst();
+        ListIterator<String> listiterator = placesToVisit.listIterator(1); // starting from index 1
+        // if we don't mention 1 it will start from 0th index.
+        while (listiterator.hasNext()){
+            var town = listiterator.next();
+            System.out.println("--->From: "+previousCity + "  to "+town);
+            previousCity = town;
+        }
+        System.out.println("--------------backward traverse----------------------");
+        while (listiterator.hasPrevious()){
+            var town = listiterator.previous();
+            System.out.println("--->to: "+previousCity + "  From "+town);
+            previousCity = town;
+        }
 
     }
 
