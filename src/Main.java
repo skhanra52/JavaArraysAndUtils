@@ -139,46 +139,94 @@ public class Main {
 //        System.out.println("After sorting in reverse Order: "+fruits);
 //        GroceryItems.chooseMenu();
         //---------------end of ArrayList-------------------------------------------
+
+
         //--------------Start if LinkedList----------------------------------------
         // ArrayList is implemented on top of the array,
         // However, LinkedList is a doubly linked list. Both implement all of List's methods,
         // but the LinkedList also implements the queue(FIFO) and stack(LIFO) methods as well.
 
+        // It supports all the List methods along with some additional methods.
+//        add(E e);
+//        get(int index);
+//        set(int index, E element);
+//        remove(int index);
+//        remove(Object o)
+//        contains(Object o);
+//        indexOf(Object o);
+//        size();
+//        isEmpty();
+//        clear();
+
+// Method specific to the LinkedList are given below:
+//        addFirst(E element);      // To add the item at the start of the List.
+//        addLast(E element);       // To add the item at the last of the List.
+
+// dequeue methods available for LinkedList------------
+
+//        offer()                   // To add the item at the start of the queue.
+//        offerFirst()              // To add the item at the start of the queue.
+//        offerLast()               // To add the item at the end of the queue.
+//        list.remove();            // Remove item from the start of the List.
+//        list.removeFirst();       // Removes the item from the start of the List.
+//        list.removeLast();        // Removes the item from the end of the list.
+//        poll()                    // To remove the item
+
+ // Stack methods available for the LinkedList---------
+//        list.push(Element e);     // Add the top of the stack.
+//        list.pop();               // Removes from the top of the stack.
+
+// Retrieving the element from the LinkedList------------
+
+//      list.get(int index);
+//      list.getFirst();
+//      list.getLast();
+
+// Retrieving using dequeue methods......................
+//      list.element();             // To retrieve the first element of the LinkedList dequeue.
+
+// Retrieve using Stack methods-------------------------
+//      list.peek();                // Returns the first element of the LinkedList stack.
+//      list.pollLast();            // Returns the last element of the LinkedList stack.
+//
+
+
+
         // Adding & Removing Elements to and from the LinkedList-------------------
         LinkedList<String> placesToVisit = new LinkedList<>();
-
-        // Adding the element to the LinkedList using List's method.
+//        var placesToVisit = new LinkedList<String>();
+//        // Adding the element to the LinkedList using List's method.
         placesToVisit.add("Ahmedabad");
         placesToVisit.add("Delhi");
         placesToVisit.add("Kolkata");
         placesToVisit.add("Chennai");
         placesToVisit.add(3,"Mumbai");
-        System.out.println("Places to visit list: "+placesToVisit);
-
-        // Adding the elements to the LinkedList using LinkedList methods.
-        placesToVisit.addFirst("Bengaluru");
-        System.out.println("After using addFirst() the list is: "+placesToVisit);
-        String removeFirst = placesToVisit.removeFirst();
-        System.out.println("Element removed from the list: "+removeFirst);
-        System.out.println("After using removeFirst() the list is: "+placesToVisit);
-
-
-        placesToVisit.addLast("Hyderabad");
-        System.out.println("After using addLast() the list is: "+placesToVisit);
-
-        String itemRemoved = placesToVisit.removeLast();
-        System.out.println("Element removed from the list: "+itemRemoved);
-        System.out.println("After using removeLast() the list is: "+placesToVisit);
+//        System.out.println("Places to visit list: "+placesToVisit);
+//
+//        // Adding the elements to the LinkedList using LinkedList methods.
+//        placesToVisit.addFirst("Bengaluru");
+//        System.out.println("After using addFirst() the list is: "+placesToVisit);
+//        String removeFirst = placesToVisit.removeFirst();
+//        System.out.println("Element removed from the list: "+removeFirst);
+//        System.out.println("After using removeFirst() the list is: "+placesToVisit);
+//
+//
+//        placesToVisit.addLast("Hyderabad");
+//        System.out.println("After using addLast() the list is: "+placesToVisit);
+//
+//        String itemRemoved = placesToVisit.removeLast();
+//        System.out.println("Element removed from the list: "+itemRemoved);
+//        System.out.println("After using removeLast() the list is: "+placesToVisit);
 
         // dequeue add and remove methods
         // offer adds the item to the end of the queue/List,
         // both offer() and offerLast() adds element to the queue.
 //        placesToVisit.offer("Agartala");
-        placesToVisit.offerLast("Agartala");
-        System.out.println("After adding element using offer() "+placesToVisit);
-
-        placesToVisit.offerFirst("Ranchi");
-        System.out.println("Added element to the list/queue using offerFirst(): "+placesToVisit);
+//        placesToVisit.offerLast("Agartala");
+//        System.out.println("After adding element using offer() "+placesToVisit);
+//
+//        placesToVisit.offerFirst("Ranchi");
+//        System.out.println("Added element to the list/queue using offerFirst(): "+placesToVisit);
 
         // remove() the first item from the list.
 //        String removeFirstFromList = placesToVisit.remove();
@@ -200,61 +248,65 @@ public class Main {
 
         // Stack add and remove methods
         // push() method adds the element to the top of the stack.
-        placesToVisit.push("Durgapur");
-        System.out.println("Added to list using stack add method push: "+placesToVisit);
+//        placesToVisit.push("Durgapur");
+//        System.out.println("Added to list using stack add method push: "+placesToVisit);
 
         // Remove the item from the top
 //        String stackRemoveElement = placesToVisit.pop();
 //        System.out.println("Item removed using pop(): "+stackRemoveElement);
 //        System.out.println("Removed item from the stack using pop(): "+placesToVisit);
 
-        // Retrieving the element from the ArrayList.
-        System.out.println("Listing the place To visit: "+placesToVisit);
-
-        System.out.println("Get the 5th item of the list using List method: "+placesToVisit.get(1));
-        System.out.println("getFirst() method return first element: "+placesToVisit.getFirst());
-        System.out.println("getLast() method returns last element: "+placesToVisit.getLast());
-        System.out.println("Get the index of element from list: "+placesToVisit.indexOf("Kolkata"));
-        System.out.println("Get the last index of the element from list: "+placesToVisit.lastIndexOf("Delhi"));
-
-        // dequeue Retrieval methods
-        String retrieveFirstDequeue = placesToVisit.element();
-        System.out.println("dequeue retrieval element() returns the first element: "+retrieveFirstDequeue);
-
-        // Stack Retrieval
-        String retrieveFirstStack = placesToVisit.peek();
-        String retrieveLastStack = placesToVisit.pollLast();
-        System.out.println("Stack retrieval: first element - "+retrieveFirstStack+"  last element - "+retrieveLastStack);
+        // Retrieving the element from the LinkedList.
+//        System.out.println("Listing the place To visit: "+placesToVisit);
+//
+//        System.out.println("Get the 5th item of the list using List method: "+placesToVisit.get(1));
+//        System.out.println("getFirst() method return first element: "+placesToVisit.getFirst());
+//        System.out.println("getLast() method returns last element: "+placesToVisit.getLast());
+//        System.out.println("Get the index of element from list: "+placesToVisit.indexOf("Kolkata"));
+//        System.out.println("Get the last index of the element from list: "+placesToVisit.lastIndexOf("Delhi"));
+//
+//        // dequeue Retrieval methods
+//        String retrieveFirstDequeue = placesToVisit.element();
+//        System.out.println("dequeue retrieval element() returns the first element: "+retrieveFirstDequeue);
+//
+//        // Stack Retrieval
+//        String retrieveFirstStack = placesToVisit.peek();
+//        String retrieveLastStack = placesToVisit.pollLast();
+//        System.out.println("Stack retrieval: first element - "+retrieveFirstStack+"  last element - "+retrieveLastStack);
 
         // traverse a LinkedList -----------------------------------------------------
 
-        System.out.println(placesToVisit);
+//        System.out.println(placesToVisit);
 //        String previousCity = placesToVisit.getFirst();
 //        System.out.println("Starting from: "+previousCity);
-        for(int i=1 ; i<placesToVisit.size(); i++){
-            System.out.println("From: "+placesToVisit.get(i-1) + " to "+placesToVisit.get(i));
-        }
-        System.out.println("Ending with city: "+placesToVisit.getLast());
+//        for(int i=1 ; i<placesToVisit.size(); i++){
+//            System.out.println("From: "+placesToVisit.get(i-1) + " to "+placesToVisit.get(i));
+//        }
+//        System.out.println("Ending with city: "+placesToVisit.getLast());
 
-        // Traverse through ListIterator, it allows us to move forward or backward.
+// Traverse through ListIterator, it allows us to move forward or backward.---------------
         // In the only iterator() method we can to traverse towards backward. However, in the iterator() method
         // we can modify the list concurrently.
         // In the ListIterator method we have the support of add() / Set() / remove() method as well.
-        String previousCity = placesToVisit.getFirst();
-        ListIterator<String> listiterator = placesToVisit.listIterator(1); // starting from index 1
-        // if we don't mention 1 it will start from 0th index.
-        while (listiterator.hasNext()){
-            var town = listiterator.next();
-            System.out.println("--->From: "+previousCity + "  to "+town);
-            previousCity = town;
-        }
-        System.out.println("--------------backward traverse----------------------");
-        while (listiterator.hasPrevious()){
-            var town = listiterator.previous();
-            System.out.println("--->to: "+previousCity + "  From "+town);
-            previousCity = town;
-        }
-
+//        String previousCity = placesToVisit.getFirst();
+//        ListIterator<String> listiterator = placesToVisit.listIterator(1); // starting from index 1
+//        // if we don't mention 1 it will start from 0th index.
+//        while (listiterator.hasNext()){
+//            var town = listiterator.next();
+//            System.out.println("--->From: "+previousCity + "  to "+town);
+//            previousCity = town;
+//        }
+//        System.out.println("--------------backward traverse----------------------");
+//        while (listiterator.hasPrevious()){
+//            var town = listiterator.previous();
+//            System.out.println("--->to: "+previousCity + "  From "+town);
+//            previousCity = town;
+//        }
+//        linkedListTraverse(placesToVisit);
+        LinkedList<CityDetail> cityList = new LinkedList<>();
+        LinkedList<CityDetail> orderCities =  linkedListAddItems(cityList);
+        System.out.println("Order cities: "+orderCities);
+        linkedListTraverse(orderCities);
     }
 
     public static int findItemInList(ArrayList<String> fruits, String itemToFind){
@@ -385,6 +437,127 @@ public class Main {
             nums[right - i] = temp;
             System.out.println("Reverse---> "+Arrays.toString(nums));
         }
+    }
+
+    // A record is a special type of class in Java (introduced in Java 14 preview, officially released in Java 16)
+    // that is mainly used to create immutable data carriers — basically classes that are just for
+    // holding data without a lot of boilerplate code
+    // (like getters, toString(), equals(), hashCode(), constructors).
+    // We can not set data as this is immutable.
+
+    public record CityDetail(String cityName, int distance){
+        // this is the second custom constructor
+        public CityDetail(String cityName){
+            // calls the canonical constructor which is CityAndDistance(String cityName, int distance).
+            this(cityName,100); // this is called constructor chaining.
+        }
+
+    }
+
+    public static LinkedList<CityDetail> linkedListAddItems(LinkedList<CityDetail> cityDetail){
+        System.out.println("""
+                Enter a name of the City and distance in comma separated format: \s
+                (consider entering the distance of the city from the Delhi).
+                To quite type (Q)uit.
+                """);
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        ListIterator<CityDetail> cities = cityDetail.listIterator();
+        while(!("Q".equalsIgnoreCase(userInput) || userInput.equalsIgnoreCase("Quit"))){
+            String[] input = userInput.split(",");
+            String cityName = input[0].trim();
+            int distance = Integer.parseInt(input[1].trim());
+            boolean isDuplicate = false;
+            while(cities.hasNext()){
+                CityDetail nextItem = cities.next();
+                if(nextItem.cityName.equalsIgnoreCase(cityName) || nextItem.equals(new CityDetail(cityName,distance))){
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if(!isDuplicate){
+                cities.add(new CityDetail(cityName,distance));
+            }
+            System.out.println("""
+                Enter a name of the City and distance in comma separated format: \s
+                """);
+            userInput = scanner.nextLine();
+        }
+        return  sortCities(cityDetail);
+    }
+
+    public static LinkedList<CityDetail> sortCities(LinkedList<CityDetail> cityDetail){
+        boolean swapped = true;
+        while(swapped){
+            swapped = false;
+            for(int i=0;i<cityDetail.size()-1;i++){
+                CityDetail prev = cityDetail.get(i);
+                CityDetail current = cityDetail.get(i+1);
+                if(prev.distance>current.distance){
+                    cityDetail.set(i, current);
+                    cityDetail.set(i+1,prev);
+                    swapped = true;
+                }
+            }
+        }
+        System.out.println(cityDetail);
+        return cityDetail;
+    }
+
+    public static void linkedListTraverse(LinkedList<CityDetail> list){
+        System.out.println("""
+                Available actions (select word or letter): \s
+                (F)orward
+                (B)ackward
+                (L)ist Places
+                (M)enu
+                (Q)uit
+                """);
+        Scanner scanner = new Scanner(System.in);
+        String chosenOption = scanner.nextLine().toLowerCase();
+        switch (chosenOption){
+            case "f", "forward":
+                forwardTraverseList(list);
+                break;
+            case "b", "backward":
+                backwardTraverseList(list);
+                break;
+            case "l":
+                itemInPlace(list);
+                break;
+            case "list places":
+                itemInPlace(list);
+            case "m", "menu":
+                linkedListTraverse(list);
+            case "quit":
+                break;
+            default:
+                System.out.println("Available list items: "+list);
+                break;
+        }
+    }
+
+    public static void forwardTraverseList(LinkedList<CityDetail> list){
+        for (CityDetail s : list) {
+            System.out.print(s + ",");
+        }
+    }
+
+    public static void backwardTraverseList(LinkedList<CityDetail> list){
+        ListIterator<CityDetail> iterator = list.listIterator(list.size()); // Starting from end of the list.
+        while(iterator.hasPrevious()){
+            CityDetail item = iterator.previous();
+            System.out.print(item+" ");
+        }
+    }
+
+    public static void itemInPlace(LinkedList<CityDetail> list){
+        int lastIndex = list.size()-1;
+        System.out.println("Kindly enter the number from 0 to "+lastIndex);
+        Scanner scanner = new Scanner(System.in);
+        int index = scanner.nextInt();
+        CityDetail item = list.get(index);
+        System.out.println("The item available in the index "+index+" is "+item);
     }
 
 }
