@@ -468,12 +468,25 @@ public class Main {
             String cityName = input[0].trim();
             int distance = Integer.parseInt(input[1].trim());
             boolean isDuplicate = false;
-            while(cities.hasNext()){
-                CityDetail nextItem = cities.next();
-                if(nextItem.cityName.equalsIgnoreCase(cityName) || nextItem.equals(new CityDetail(cityName,distance))){
+
+            for(var city: cityDetail){
+                if(city.equals(new CityDetail(cityName,distance))){
                     isDuplicate = true;
                     break;
                 }
+            }
+            int matchedIndex = 0;
+            var place = new CityDetail(cityName,distance);
+            for(var city : cityDetail){
+                if(city.cityName.equalsIgnoreCase(cityName)){
+                    if(distance<city.distance){
+                        cityDetail.set(matchedIndex,place);
+                        System.out.println("MatchedIndex"+matchedIndex);
+                        isDuplicate = true;
+                        break;
+                    }
+                }
+                matchedIndex++;
             }
             if(!isDuplicate){
                 cities.add(new CityDetail(cityName,distance));
@@ -547,7 +560,7 @@ public class Main {
         ListIterator<CityDetail> iterator = list.listIterator(list.size()); // Starting from end of the list.
         while(iterator.hasPrevious()){
             CityDetail item = iterator.previous();
-            System.out.print(item+" ");
+            System.out.println(item+" ");
         }
     }
 
