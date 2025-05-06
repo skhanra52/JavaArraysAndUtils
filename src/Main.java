@@ -307,6 +307,35 @@ public class Main {
         LinkedList<CityDetail> orderCities =  linkedListAddItems(cityList);
         System.out.println("Order cities: "+orderCities);
         linkedListTraverse(orderCities);
+
+        // Album and play list problem solved here.
+        ArrayList<Album> albums = new ArrayList<>();
+        Album album = new Album("Stormbringer", "Deep Purple");
+        album.addSong("Stormbringer", 4.6);
+        album.addSong("Love don't mean a thing", 4.22);
+        album.addSong("Holy man", 4.3);
+        album.addSong("Hold on", 5.6);
+        album.addSong("Lady double dealer", 3.21);
+        albums.add(album); // adding newly created album to ArrayList albums.
+
+        album = new Album("For those about to rock", "AC/DC");
+        album.addSong("For those about to rock", 5.44);
+        album.addSong("I put the finger on you", 3.25);
+        album.addSong("Lets go", 3.45);
+        album.addSong("Inject the venom", 3.33);
+        album.addSong("Snowballed", 4.51);
+        albums.add(album); // adding newly created album to ArrayList albums.
+
+        LinkedList<Song> playList = new LinkedList<Song>();
+        albums.get(0).addToPlayList("You can't do it right", playList);
+        albums.get(0).addToPlayList("Holy man", playList);
+        albums.get(0).addToPlayList("Speed king", playList);  // Does not exist
+
+        albums.get(0).addToPlayList(9, playList); // does not exist
+        albums.get(1).addToPlayList(3, playList);
+        albums.get(1).addToPlayList(2, playList);
+
+
     }
 
     public static int findItemInList(ArrayList<String> fruits, String itemToFind){
